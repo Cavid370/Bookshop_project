@@ -1,0 +1,2 @@
+1)Javascript ilə biz səhifələrimizdə dinamikliyi təşkil edə bilərik.Yəniki html və css ilə verdiyimiz formaya js ilə hərəkətlilik tətbiq edə bilərik.
+2)Bəli düzəldə bilərik amma dinamiklik cəhətdən isdifadəsiz olduğu üçün isdifadəciləri narahat edəcək.

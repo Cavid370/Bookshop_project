@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading{
+    font-family: Lobster;
+    text-decoration: none;
+    text-align: center;
+    color:#279e97;
+    background-color:white ;
+    border-bottom:2px solid black;
+
+}
+.bar{
+    background-color: #279e97;
+    width: 100%;
+    height: 50px;
+    border-bottom:2px solid black ;
+    color: white;
+    display: flex;
+    align-items: center;
+   
+    justify-content: center;
+    
+}
+
+.nav{
+    display:flex;
+    text-decoration: none;
+    position:absolute;
+    
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+    
+    height: 48px;
+    width: 60%;
+
+    
+
+    
+}
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-right: 1px solid  white;
+    
+    width: 50%;
+    
+   
+    flex: 1;  
+
+} 
+
+
+.nav-links a{
+    text-decoration: none;
+
+    color: white;
+    
+
+} 
+.nav-links:nth-child(1){
+    border-left: 1px solid  white; ;
+}
+
+.body1{
+    background-image:url(./images/paper_bg.jpg);
+    
+    background-repeat: no-repeat;
+    background-size:100%  ;
+    
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-content: center;
+
+
+    
+}
+#text{
+    margin: 5% 10%;
+    
+    display: flex;
+    
+    
+   
+}
+.submit{
+    padding: 2% 3%;
+    background-color: #279e97 ;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.image{
+    width: 15%;
+    margin-left: 10%;
+}
+.icons{
+    color: #279E97;
+    position: relative;
+    display: block;
+    text-align: center;
+    
+}
+.container{
+    width: 60%;
+    display: flex;
+    margin: auto;
+    
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+#bodyicons{
+    position: fixed;
+    top: 250px;
+    right: 0;
+    display: block;
+}
+.up{
+    color: #808080;
+    
+    display: block;
+    text-align: center;
+}
+.name{
+    text-align: center;
+
+}
+#body2{
+    
+    display: flex;
+    margin: auto;
+    width:60% ;
+    height:100% ;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px dashed #997575;
+
+
+
+}
+.images {
+    width: 30%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px dotted #279E97;
+}
+.top{
+    margin-top: 20px;
+}
+.top1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.foot{
+    text-align: center;
+    
+    padding: 20px;
+    background-color: #279E97;
+    color: white;
+    border-top: 2px solid black
+}

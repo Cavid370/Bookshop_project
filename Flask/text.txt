@@ -1,0 +1,17 @@
+from models import *
+
+
+book1 = book(title = ' In Search of Lost Time',description = "Swann's Way, the first part of A la recherche de temps perdu, Marcel Proust's seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work. The narr...",author= "Marcel Proust",image_url = "https://d3i5mgdwi2ze58.cloudfront.net/ohbd3xqukj7do2f0o5txmhghfsva",price = 20,language = "Ingilis",stock = True,genre = "Dram",publisher="Amazon")
+book2 = book(title = ' Malva',description = ' Some text',author= "Maxim Qorki ",image_url = "https://static.insales-cdn.com/images/products/1/6776/544881272/2022-05-11-09-26-171652246777.jpg",price = 4,language = "Rus",stock = True,genre = "Klassika",publisher="Qanun nesr")
+book3 = book(title = '  Ulysses',description = ' Some text',author= "James Joyce",image_url = "https://d3i5mgdwi2ze58.cloudfront.net/usuab7s8yuwlcmadwx9woy746lvi",price = 18,language = "Azerbaycan",stock = False,genre = "Roman",publisher="Booker")
+book4 = book(title = ' Malva',description = ' Some text',author= "Miguel de Cervantes ",image_url = "https://d3i5mgdwi2ze58.cloudfront.net/821hrmad01r9sdml2g2mmnbyykfk",price = 15,language = "Ingilis",stock = False,genre = "Klassika",publisher="Qanun nesr")
+book5 = book(title = ' One Hundred Years of Solitude ',description = ' Some text',author= "Gabriel Garcia Marquez ",image_url = "https://d3i5mgdwi2ze58.cloudfront.net/j7koelfcv0va5zky4x1ccmpsgcsb",price = 30,language = "Rus",stock = True,genre = "Klassika",publisher="Qanun nesr")
+book6 = book(title = ' The Great Gatsby ',description = ' Some text',author= " F. Scott Fitzgerald ",image_url = "https://d3i5mgdwi2ze58.cloudfront.net/m8sdet02cc7mdl8l6jow8cpl7co2",price = 8,language = "Azerbaycan",stock = True,genre = "Klassika",publisher="Qanun nesr")
+
+
+book1.save()
+book2.save()
+book3.save()
+book4.save()
+book5.save()
+book6.save()

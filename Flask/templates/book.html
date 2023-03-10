@@ -1,0 +1,306 @@
+{% extends 'layout.html'%}
+
+{% block content%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container-fluid m-auto ">
+        <div class="row col-8 mb-0 m-auto">
+            <a class="navbar-brand col-4  m-0" href=" {{url_for('newpage')}}">Kitab Mağazası</a>
+            <ul class="navbar-nav col-8 m-auto  mb-2 mb-lg-0 justify-content-end ">
+                <a href="#"><span id="badge" class="my-2 badge" style="background-color: red; border-radius: 10px;">
+                    </span></a>
+
+
+                <li class="nav-item dropdown">
+                    <i data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
+                        class="my-1 nav-link active dropdown-toggle fa-solid fa-cart-shopping"></i>
+
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown " style="width: 200px;">
+                        <div id="parent1">
+                            <li class="d-flex ">
+                                <a class="dropdown-item d-flex justify-content-between align-items-center py-1"
+                                    href="#">
+
+                                    <i onclick="removeElement1()" class="fa-solid fa-xmark"
+                                        style="color: red; margin-right: 10px;"></i>
+                                    <div class="d-flex justify-content-between align-items-center" style="flex: 1;">
+                                        <p class="mb-0">1984</p>
+                                        <p class="mb-0">16AZN</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </div>
+
+                        <div id="parent2">
+                            <li class="d-flex ">
+
+                                <a class="dropdown-item d-flex justify-content-between align-items-center py-1  element"
+                                    href="#">
+
+                                    <i onclick="removeElement2()" class="fa-solid fa-xmark"
+                                        style="color: red;  margin-right: 10px;"></i>
+                                    <div class="d-flex justify-content-between align-items-center" style="flex: 1;">
+                                        <p class="mb-0">Səfillər</p>
+                                        <p class="mb-0">21AZN</p>
+                                    </div>
+                                </a>
+
+                            </li>
+                        </div>
+                        <div id="parent3">
+                            <li style="display: none;" class="d-none  " id="book">
+                                <a class="dropdown-item d-flex justify-content-between align-items-center py-1"
+                                    href="#">
+
+                                    <i onclick="removeElement3()" class="fa-solid fa-xmark"
+                                        style="color: red;  margin-right: 10px;"></i>
+                                    <div class="d-flex justify-content-between align-items-center" style="flex: 1;">
+                                        <p class="mb-0">İncognito</p>
+                                        <p class="mb-0">12AZN</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </div>
+                        <li class="d-flex">
+                            <a class="dropdown-item d-flex flex-wrap "
+                                style="width:70% ;padding-left: 30px; padding-right: 45px;" href="#">Cəmi:</a>
+                            <a class="dropdown-item d-flex flex-wrap " id="money2" style="width:30% ;padding-right: 0%;"
+                                href="#"></a>
+                            <a class="dropdown-item d-flex flex-wrap "
+                                style="margin: 0%; padding-left: 1%; padding-right: 0%;" href="#">AZN</a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href=" {{url_for('index')}}">Ana səhifə</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Haqqımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kateqoriyalar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('product')}}">Ayın kitabı</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        İstifadəçi
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown ">
+                        <li><a class="dropdown-item d-flex flex-wrap" href="#">Action</a></li>
+                        <li><a class="dropdown-item d-flex flex-wrap" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item d-flex flex-wrap" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container col-8 mt-5">
+    <div class="row">
+        <div class=" d-flex  ">
+            <img src="{{books.image_url}}" class="card-img-top d-flex align-items-center jus me-auto  ms-1   "
+                style="width: 30%; height: 90%;" alt="...">
+
+            <div class="col">
+                <div class="d-flex justify-content-end position-relative ">
+                    <h2>{{books.title}}</h2>
+                </div>
+                <div class=" d-flex align-items-center justify-content-end m-auto mb-4">
+
+                    <h4 class="text-success ">{{books.price}} AZN</h4>
+                    <strike class="text-danger ">15.00 AZN</strike>
+
+                </div>
+                <div class="text-end d-flex justify-content-end">
+                    <p style="width: 90%;">
+                        {{books.description}}
+                    </p>
+
+                </div>
+                <div class="d-flex justify-content-end">
+                    <i onclick="thumb()" id="thumb" class="fa fa-thumbs-up " style="font-size: 35px;
+                        cursor: pointer;
+                        user-select: none;
+                        color:gray; margin-right: 20px;"></i>
+                    <i class="fa fa-heart " onclick="heart()" id="heart" style="font-size: 35px;
+                        cursor: pointer;
+                        user-select: none;
+                        color:gray; margin-right: 20px;"></i>
+                    <button type="button" onclick="sebet()" id="sebet" class="btn btn-info text-light mb-5 "
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">Səbətə əlavə et</button>
+
+                </div>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Bildiriş</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modal1">
+                                Məhsul səbətə əlavə edildi
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning text-center col-12 m-auto mt-3" role="alert">
+        Bu kitabdan cəmi 2 ədəd qalıb
+    </div>
+</div>
+
+<h4 class="text-center mt-5">XÜSUSİYYƏTLƏR</h4>
+<div class="container col-8 m-auto">
+    <table class="table table-striped table-hover ">
+        <td>#</td>
+        <td>Xüsusiyyət</td>
+        <td>Açıqlama</td>
+        <tr>
+            <td>1</td>
+            <td>Dil:</td>
+            <td>{{books.language}}</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Janr:</td>
+            <td>{{books.genre}}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Müəllif:</td>
+            <td>{{books.author}}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Nəşriyyat:</td>
+            <td>{{books.publisher}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+<div class="container col-8">
+    <div>
+        <form action="" class="contact100-form validate-form" method="POST">
+            {{ form.csrf_token }}
+
+            <div class="wrap-input100 validate-input  mb-3" data-validate="Name is required">
+                <span class='label-input100 '>Ad soyad:</span>
+                <br>
+                {{ form.fullname(class = 'input100 col-12 mt-2 form-control', placeholder="Ad Soyadınızı qeyd edin:") }}
+
+            </div>
+
+            <div class="wrap-input100 input100-select col-12 mb-3">
+                <span class="label-input100 ">Dil:</span>
+                <div class="mt-2">
+                    {{form.language(class="selection-2 col-12 form-select" )}}
+                </div>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input mb-3" data-validate="Message is required">
+                <span class="label-input100mb-2">Şərhiniz:</span>
+                <div class="col-12  mt-2">
+                    {{form.message(class="form-control ",placeholder="Leave a comment here",style="height: 150px" )}}
+                </div>
+                <span class="focus-input100"></span>
+            </div>
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn  btn btn-primary mb-3 " type="submit">
+                        <span>
+                            Submit
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div class="bg-info">
+
+    <div class="text-center p-3 text-light ">
+        <h5>Bütün kitablar</h5>
+        <br>
+        <div class="slider row  m-auto " style="width: 90%; justify-content: center; ">
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/düəs.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/Inkognito.png')}}"
+                    class='card-img-top' alt='...'></div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/lusi.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/das evler.jpg')}}"
+                    class='card-img-top' alt='...'></div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/demir.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/yasamaq.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/düəs.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/Inkognito.png')}}"
+                    class='card-img-top' alt='...'></div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/düəs.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+            <div><img style="width:50%; " src="{{url_for('static',filename='images/yasamaq.jpg')}}" class='card-img-top'
+                    alt='...'>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+{% block footer %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="{{url_for('static',filename='js/product.js')}}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+
+    $('.slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+</script>
+{% endblock %}

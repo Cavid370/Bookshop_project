@@ -1,0 +1,61 @@
+create table Author (
+    Author_Id int primary key auto_increment,
+    Author_Name varchar(255),
+    Author_Description varchar(255)
+);
+create table Genre(genre_id int primary key auto_increment,
+                   genre_name varchar(255));
+create table Lang(lang_id int primary key auto_increment,
+                  lang_code varchar(2),
+                  lang_name varchar(255));
+
+
+ CREATE TABLE Book_info (
+        Book_info_ID int  PRIMARY KEY AUTO_INCREMENT,
+        Title varchar(255) NOT NULL,
+        author_id int,
+        Published_at date,
+        Exist boolean default True,
+        Genre varchar(255) ,
+        Language varchar(255),
+        Price decimal(10,2) default "10.00",
+        Genre_id int,
+        lang_id int,
+        FOREIGN KEY (Genre_id) REFERENCES Genre(Genre_id),
+        FOREIGN KEY (lang_id) REFERENCES lang(lang_id)
+        FOREIGN KEY (author_id) REFERENCES Author(author_id),
+
+);
+
+
+
+insert into author(Author_Name,Author_Description)
+values("Aqata Kristi",'description'),
+("Enid Blayton",'description'),
+("Dilshad Talibova",'description'),
+("Sidney Sheldon",'description'),
+("David Lavrens",'description'");
+
+insert into genre(genre_name)
+values ('Psychology'),
+('Roman'),
+('Horror');
+
+insert into lang(lang_code, lang_name)
+values ('en', 'English'),
+('ru', 'Russian'),
+('az', 'Azerbaijan');
+
+
+insert into Book_info(title, author_id, published_at, exist, genre_id, lang_id, price)
+values
+('Yoliz', 1, '1988-01-01', 1, 1, 1, 12.75),
+('Guzgudeki namelum adam', 2, '1862-01-01', 1, 2, 3, 15.00),
+('Icimizdek guc', 5, '1949-01-01', 1, 3, 1, 20.00),
+('Universitetin missiyasi', 4,'1869-01-01', 0, 3, 3, 18.00),
+('Sanitar, 3, '1952-01-01', 0, 3, 1, 7.99);
+
+select book_info.Book_info_ID, book_info.title, author.author_name, author.Author_Description, book_info.published_at, book_info.exist, genre_name, lang_code, lang_name, book_info.price from Book_info
+inner join author on Book_info.author_id = author.author_id
+inner join genre on Book_info.genre_id = genre.genre_id
+inner join lang on Book_info.lang_id = lang.lang_id

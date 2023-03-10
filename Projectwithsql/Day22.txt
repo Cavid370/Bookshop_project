@@ -1,0 +1,22 @@
+insert into bookinfo(Title, Author, Exist, Genre, Price)
+values("Yoliz","Mixail Soloxov",1,"Classic",3.19),("Guzgudeki namelum adam","Sidney Sheldon",1,"Dedektiv", 10.39),("Icimizdek guc","Luiza Hey",1,"Psixologiya",7.99 ),
+("Universitetin missiyasi","Xose Orteqa-i-Qasset",1,"Elm",7.99 ),
+("Sanitar","Dilsad Talibova",1,"Roman",7.99 ),("Siyasetname","Abu Ali Hasan Ibn Ali",1,"Felsefe",12 );
+select * from bookinfo1;
+select Title,price from bookinfo1;
+select Title,price from bookinfo1 where price>10;
+select * from bookinfo1 where Id=1;
+select * from bookinfo1 where id in (1,2,3);
+select * from bookinfo1 where price between 5 and 15 ;
+select * from bookinfo1 where price<=15 and exist=1;
+select * from bookinfo1 where price <=10 or id=2;
+select * from bookinfo1 where author like "Da%";
+select * from bookinfo1 where title like "%ni%";
+select * from bookinfo1 where author like "_av%";
+select * from bookinfo1 order by price;
+select * from bookinfo1 order by id desc;
+update bookinfo1 set exist=0  where id=2;
+delete bookinfo1 where id=3
+delete from bookinfo1
+drop table bookinfo1
+drop database BOOK_INFO
